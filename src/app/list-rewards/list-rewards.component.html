@@ -1,0 +1,27 @@
+<h1>{{customer.name}}</h1>
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Description</th>
+        <th>Total</th>
+        <th>Target Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transactions of customer.transactions">
+          <td>{{transactions.id}}</td>
+          <td>{{transactions.description}}</td>
+          <td>{{transactions.total}}</td>
+          <td>{{transactions.saveDate | date | uppercase}}</td>
+        </tr>
+    </tbody>
+  </table>
+
+  <div class="row">
+    <td><button (click)="addTodo()" class="btn btn-success">Add</button></td>
+  </div>
+
+</div>
