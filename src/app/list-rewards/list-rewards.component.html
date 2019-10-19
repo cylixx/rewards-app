@@ -1,4 +1,5 @@
-<h1>{{customer.name}}</h1>
+<h3>{{customer.name}}</h3>
+<h3>Reward Points {{customer.rewardPoints}}</h3>
 
 <div class="container">
   <table class="table">
@@ -6,7 +7,8 @@
       <tr>
         <th>ID</th>
         <th>Description</th>
-        <th>Total</th>
+        <th>Purchase</th>
+        <th>Reward Points</th>
         <th>Target Date</th>
       </tr>
     </thead>
@@ -14,7 +16,8 @@
       <tr *ngFor="let transactions of customer.transactions">
           <td>{{transactions.id}}</td>
           <td>{{transactions.description}}</td>
-          <td>{{transactions.total}}</td>
+          <td>$ {{transactions.total | number:'1.1-2'}}</td>
+          <td>{{transactions.points | number}}</td>
           <td>{{transactions.saveDate | date | uppercase}}</td>
         </tr>
     </tbody>
