@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Customer } from 'src/app/list-rewards/list-rewards.component';
 import { HttpClient } from '@angular/common/http';
+import { Customer } from 'src/app/model/classes';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,11 @@ export class RewardsDataService {
     private http:HttpClient
   ) { }
 
+  retrieveAllCustomers() {
+    return this.http.get<Customer[]>(`http://localhost:8080/customers`);
+  }
+
   retrieveCustomer(customerId) {
-    return this.http.get<Customer>(`http://localhost:8080/customer/${customerId}`);
+    return this.http.get<Customer>(`http://localhost:8080/customers/${customerId}`);
   }
 }

@@ -6,11 +6,13 @@ import { HttpClientModule } from '@angular/common/http'; //necesario para invoca
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListRewardsComponent } from './list-rewards/list-rewards.component';
+import { ListCustomersComponent } from './list-customers/list-customers.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListRewardsComponent
+    ListRewardsComponent,
+    ListCustomersComponent
   ],
   imports: [
     BrowserModule,

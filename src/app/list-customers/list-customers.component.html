@@ -1,0 +1,24 @@
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Total Purchase</th>
+        <th>Reward Points</th>
+        <th>Transactions Detail</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers">
+          <td>{{customer.id}}</td>
+          <td>{{customer.name}}</td>
+          <td>$ {{customer.totalPurchases | number:'1.1-2'}}</td>
+          <td>{{customer.rewardPoints | number}}</td>
+          <td><button (click)="customerTransactions(customer.id)" class="btn btn-success">Detail</button></td>
+        </tr>
+    </tbody>
+  </table>
+
+</div>

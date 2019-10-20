@@ -1,26 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RewardsDataService } from '../service/data/rewards-data.service';
 import { Router, ActivatedRoute } from '@angular/router';
-
-
-export class Transactions {
-  constructor(
-    public id: number,
-    public description: string,
-    public total: number,
-    public saveDate:Date,
-    public points: number
-  ){}
-}
-
-export class Customer {
-  constructor(
-    public id: number,
-    public name: string,
-    public transactions: Transactions[],
-    public rewardPoints: number
-  ){}
-}
+import { Customer } from '../model/classes';
 
 
 @Component({
@@ -40,7 +21,7 @@ export class ListRewardsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.customer = new Customer(0, '', [], 0);
+    this.customer = new Customer(0, '', [], 0, 0);
     this.refreshCustomer();
   }
 
@@ -52,6 +33,10 @@ export class ListRewardsComponent implements OnInit {
         this.customer = response;
       }
     )
+  }
+
+  refreshCustomers() {
+    this.router.navigate(['customers']);
   }
 
 }
