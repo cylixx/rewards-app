@@ -54,12 +54,12 @@ Given a record of every transaction during a three month period, calculate the r
 ------------------------------------------------------------
 **Install bootstrap:**
 
-1. Ejecutar el comando en la carpeta del proyecto
+1. Execute the following command in the root of the project to add Bootstrap.
 ```
    npm install bootstrap@3 jquery --save
 
 ```
-2. Modificar el archivo `angular.json`, poner como esta abajo   
+2. Modify the file `angular.json`, put the following code.   
 
 ```
             "styles": [
